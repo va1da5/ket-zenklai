@@ -46,8 +46,8 @@ export default function Flashcards({ signs }: Props) {
   const handleFeedback = (index: number, interval: string) => {
     const options: { [key: string]: number } = {
       "1m": 1 * 60 * 1000,
-      "6m": 1 * 60 * 1000,
-      "10m": 1 * 60 * 1000,
+      "7m": 7 * 60 * 1000,
+      "15m": 15 * 60 * 1000,
       "4d": 4 * 24 * 60 * 60 * 1000,
     };
 
@@ -74,11 +74,11 @@ export default function Flashcards({ signs }: Props) {
     },
     {
       title: "Sudėtinga",
-      value: "6m",
+      value: "7m",
     },
     {
       title: "Teisingai",
-      value: "10m",
+      value: "15m",
     },
     {
       title: "Išmokau",
