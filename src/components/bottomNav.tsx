@@ -19,11 +19,11 @@ type Props = {
 
 export default function BottomNav({ onChange, current }: Props) {
   return (
-    <div className="btm-nav xs:fixed md:absolute">
+    <div className="btm-nav  xs:fixed sm:absolute ">
       {buttons.map((button) => (
         <button
           key={button.name}
-          className={`dark:bg-stone-800 dark:text-gray-400 ${
+          className={`dark:bg-gray-800 dark:text-gray-400 ${
             current == button.name ? "active" : ""
           }`}
           onClick={() => onChange(button.name)}

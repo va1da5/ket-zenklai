@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,7 +7,12 @@
 @layer base {
   html,
   body {
-    @apply dark:text-white xs:dark:bg-gray-900 sm:dark:bg-black md:bg-gray-200;
-    @apply min-h-screen;
+    @apply sm:bg-gradient-to-r sm:from-gray-100 sm:to-gray-300;
+    @apply h-full min-h-screen;
+    @apply dark:bg-gradient-to-r dark:from-slate-900 dark:via-purple-900 dark:to-slate-900 dark:text-white xs:dark:bg-gray-800;
   }
+}
+
+#root {
+  @apply h-full min-h-screen;
 }

@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import { useLocalStorage, useMedia } from "react-use";
+import { useState } from "react";
 import signs from "./assets/data.json";
 import BottomNav from "./components/bottomNav";
 import Container from "./components/container";
@@ -9,38 +8,13 @@ import Settings from "./components/settings";
 
 function App() {
   const [view, setView] = useState("flashcards");
-  const [theme, setTheme] = useState("light");
-  const [themePersist, setThemePersist, ThemePersist] = useLocalStorage<string>(
-    "__flashcards_theme",
-    "light"
-  );
-
-  useEffect(() => {
-    setThemePersist(theme);
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-      return;
-    }
-    document.documentElement.classList.remove("dark");
-  }, [theme]);
-
-  useEffect(() => {
-    setTheme(themePersist || "light");
-  }, []);
 
   return (
     <Container>
-      <div className="mx-auto mb-10 flex flex-col items-center gap-5 rounded-xl pt-10 md:pb-20">
+      <div className="flex h-full flex-col items-center gap-5 xs:pt-5 sm:pt-10 sm:pb-20">
         {view == "flashcards" && <Flashcards signs={signs} />}
         {view == "random" && <RandomCards signs={signs} />}
-        {view == "settings" && (
-          <Settings
-            theme={theme}
-            onThemeChange={() => {
-              setTheme((current) => (current === "light" ? "dark" : "light"));
-            }}
-          />
-        )}
+        {view == "settings" && <Settings />}
       </div>
       <BottomNav current={view} onChange={setView} />
     </Container>

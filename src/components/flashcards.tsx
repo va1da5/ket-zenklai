@@ -87,13 +87,13 @@ export default function Flashcards({ signs }: Props) {
   ];
 
   return (
-    <>
+    <div className="h-full w-full">
       <Card sign={signs[index]} reveal={show} />
 
-      <div className="flex items-center pb-10">
+      <div className="flex w-full justify-center xs:mt-2 sm:mt-6">
         {!show && (
           <button
-            className="btn btn-primary mt-2 dark:bg-blue-800"
+            className="btn btn-primary dark:bg-blue-800"
             onClick={() => setShow(true)}
           >
             Peržiūrėti
@@ -101,7 +101,7 @@ export default function Flashcards({ signs }: Props) {
         )}
 
         {show && (
-          <div className="btn-group mt-4">
+          <div className="btn-group">
             {buttons.map((button) => (
               <button
                 key={button.value}
@@ -110,7 +110,7 @@ export default function Flashcards({ signs }: Props) {
                   handleFeedback(index, button.value);
                 }}
               >
-                <span className="absolute -top-5 lowercase text-gray-700 dark:text-gray-500 ">
+                <span className="absolute -top-5 lowercase text-gray-500 dark:text-gray-300 ">
                   &lt;{button.value}
                 </span>
                 {button.title}
@@ -119,6 +119,6 @@ export default function Flashcards({ signs }: Props) {
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 }

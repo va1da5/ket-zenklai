@@ -26,13 +26,13 @@ export default function RandomCards({ signs }: Props) {
   }, []);
 
   return (
-    <>
+    <div className="h-full w-full">
       <Card sign={signs[index]} reveal={show} />
 
-      <div className="pb-10">
+      <div className="flex w-full justify-center xs:mt-2 sm:mt-6">
         {!show && (
           <button
-            className="btn btn-primary mt-2 dark:bg-blue-800"
+            className="btn btn-primary dark:bg-blue-800"
             onClick={() => setShow(true)}
           >
             Peržiūrėti
@@ -41,13 +41,13 @@ export default function RandomCards({ signs }: Props) {
 
         {show && (
           <button
-            className="btn btn-primary mt-2 dark:bg-blue-800"
+            className="btn btn-primary dark:bg-blue-800"
             onClick={setRandom}
           >
             Atsitiktinis
           </button>
         )}
       </div>
-    </>
+    </div>
   );
 }

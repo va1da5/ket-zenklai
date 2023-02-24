@@ -2,9 +2,10 @@ import React from "react";
 
 export default function container(props: any) {
   return (
-    <div className="flex h-full w-full items-center justify-center">
+    <div className="flex h-full w-full">
       <div
-        className={`relative xs:w-full xs:dark:bg-gray-900  sm:w-3/4 md:my-20 md:w-2/4 md:bg-white md:shadow-lg md:dark:bg-gray-900 xl:w-1/4 ${
+        className={`relative h-full w-1/4 rounded-lg dark:bg-gray-800 xs:w-full sm:m-auto
+        sm:h-[calc(100%-100px)] sm:w-[600px]  sm:bg-white sm:shadow-lg sm:dark:bg-gray-800 ${
           props.className ? props.className : ""
         }`}
       >
